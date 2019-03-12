@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="DOZ - FORMFIELD">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>DOZ - COMPONENT</title>
+    <script src="https://unpkg.com/doz/dist/doz.js"></script>
+    <script src="bundle.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        div {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app"></div>
+
+<script>
+
+    new Doz({
+        root: '#app',
+        template(h) {
+            return h`
+                <doz-formfield
+                    type="text"
+                    label="Insert your name"
+                    name="Name"
+                    required="true"
+                    />
+
+            `
+        }
+    });
+
+</script>
+</body>
+</html>
