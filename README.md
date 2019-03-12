@@ -3,7 +3,7 @@ All form elements component for DOZ
 
 ## Install
 ```
-npm install doz-formfield
+npm install --save doz-formfield
 ```
 
 
