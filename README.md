@@ -1,4 +1,4 @@
-# DOZ-FORMFIELD
+# doz-formfield
 All form elements component for DOZ
 
 ## Install
