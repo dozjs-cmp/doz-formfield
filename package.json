@@ -11,7 +11,7 @@
         "release:major": "webpack --env.major --mode=production && npm run-script release:publish",
         "release:minor": "webpack --env.minor --mode=production && npm run-script release:publish",
         "release:patch": "webpack --env.patch --mode=production && npm run-script release:publish",
-        "release:publish": "echo git commit -a -m BUILD && version-to-tag.sh && npm publish"
+        "release:publish": "git commit -a -m BUILD && version-to-tag.sh && npm publish"
     },
     "keywords": [
         "doz",
