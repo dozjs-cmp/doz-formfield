@@ -1,4 +1,4 @@
-// [DozFormfield]  Build version: 0.1.2  
+// [DozFormfield]  Build version: 0.1.3  
  (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory(require("doz"));
@@ -218,7 +218,7 @@ var _class = function (_Component) {
                     input = '\n                    <input \n                        d-ref="field" \n                        id="' + this.props.id + '" \n                        type="' + this.props.type + '" \n                        name="' + this.props.name + '" \n                        d-bind="value"\n                        \n                        class="' + this.props.classField + '"\n                        required=' + this.props.required + '\n                    >\n                ';
             }
 
-            return '\n            <div class="' + this.props.classInner + '">\n                <label for="' + this.props.id + '">\n                    ' + this.props.label + ' ' + (this.props.required ? '<span class="required">*</span>' : '') + ' \n                </label>\n                ' + (this.props.description ? '<div>' + this.props.description + '</div>' : '') + '\n                <div>\n                    ' + input + '\n                </div>\n                <div>\n                    ' + this.props.value + '\n                </div>\n                \n            </div>\n        ';
+            return '\n            <div class="' + this.props.classInner + '">\n                <label for="' + this.props.id + '">\n                    ' + this.props.label + ' ' + (this.props.required ? '<span class="required">*</span>' : '') + ' \n                </label>\n                ' + (this.props.description ? '<div>' + this.props.description + '</div>' : '') + '\n                <div>\n                    ' + input + '\n                </div>        \n            </div>\n        ';
         }
     }, {
         key: 'setNew',
