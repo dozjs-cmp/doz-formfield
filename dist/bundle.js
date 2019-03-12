@@ -1,13 +1,13 @@
-// [YourComponent]  Build version: 0.0.0  
+// [DozFormfield]  Build version: 0.1.2  
  (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory(require("doz"));
 	else if(typeof define === 'function' && define.amd)
-		define("YourComponent", ["doz"], factory);
+		define("DozFormfield", ["doz"], factory);
 	else if(typeof exports === 'object')
-		exports["YourComponent"] = factory(require("doz"));
+		exports["DozFormfield"] = factory(require("doz"));
 	else
-		root["YourComponent"] = factory(root["Doz"]);
+		root["DozFormfield"] = factory(root["Doz"]);
 })(this, function(__WEBPACK_EXTERNAL_MODULE__0__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -145,14 +145,11 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n                        <div>hello</div>\n                    '], ['\n                        <div>hello</div>\n                    ']),
-    _templateObject2 = _taggedTemplateLiteral(['\n\n            <style> \n                button {\n                    font-size: 24px;\n                    padding: 20px;\n                }\n            </style>\n            \n            <button \n                onclick="this.clickMe()">\n                hello ', '\n            </button>\n            <my-c/>\n        '], ['\n\n            <style> \n                button {\n                    font-size: 24px;\n                    padding: 20px;\n                }\n            </style>\n            \n            <button \n                onclick="this.clickMe()">\n                hello ', '\n            </button>\n            <my-c/>\n        ']);
-
 var _doz = __webpack_require__(0);
-
-function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -169,15 +166,23 @@ var _class = function (_Component) {
         var _this = _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this, o));
 
         _this.props = {
-            name: 'DOZ'
-        };
-
-        _this.config = {
-            components: {
-                'my-c': function myC(h) {
-                    return h(_templateObject);
-                }
-            }
+            id: '',
+            type: 'text',
+            label: '',
+            name: '',
+            options: [],
+            required: false,
+            value: '',
+            done: false,
+            description: '',
+            errors: '',
+            classInner: '',
+            classField: '',
+            storeUrl: '',
+            rowPath: '',
+            valueRow: '',
+            displayRow: '',
+            showValue: false
         };
         return _this;
     }
@@ -185,19 +190,72 @@ var _class = function (_Component) {
     _createClass(_class, [{
         key: 'template',
         value: function template(h) {
-            return h(_templateObject2, this.props.name);
+            var _this2 = this;
+
+            var input = '';
+
+            switch (this.props.type) {
+                case 'select':
+
+                    input = '\n                    <input \n                        d-ref="selectHidden" \n                        name="' + this.props.name + '" \n                        type="hidden"\n                    >\n                    <select \n                        id="' + this.props.id + '" \n                        d-ref="field" \n                        class="' + this.props.classField + '"\n                        required="' + this.props.required + '"\n                    >\n                    ' + this.each(this.props.options, function (item) {
+                        if ((typeof item === 'undefined' ? 'undefined' : _typeof(item)) === 'object') return '\n                                <option ' + (_this2.props.value == item.value ? 'selected' : '') + ' value="' + item.value + '">' + item.key + ' ' + (_this2.props.showValue ? '(' + item.value + ')' : '') + '</option>\n                            ';else return '\n                                <option ' + (_this2.props.value === item ? 'selected' : '') + ' value="' + item + '">' + item + '</option>\n                            ';
+                    }) + '\n                    </select>\n                ';
+                    break;
+
+                case 'textarea':
+                    input = '\n                    <textarea \n                        id="' + this.props.id + '" \n                        d-ref="field" \n                        name="' + this.props.name + '" \n                        class="' + this.props.classField + '"\n                        required=' + this.props.required + '\n                    > ' + this.props.value + '</textarea>\n                ';
+                    break;
+
+                case 'checkbox':
+                    input = '\n                    <input \n                        id="' + this.props.id + '" \n                        type="checkbox" \n                        d-bind="done"  \n                        d-ref="field" \n                        name="' + this.props.name + '" \n                        class="' + this.props.classField + '"\n                        required=' + this.props.required + '\n                    > $' + this.props.done + ' <br/>\n                ';
+                    break;
+
+                case 'color':
+                    input = '\n                    <input \n                        d-ref="colorInput" \n                        type="color" \n                        d-bind="value" \n                        style="vertical-align: bottom"\n                    >\n                    <input \n                        d-ref="field" \n                        id="' + this.props.id + '" \n                        type="text" \n                        name="' + this.props.name + '" \n                        d-bind="value" \n                        class="' + this.props.classField + '"\n                        required="' + this.props.required + '"\n                        style="display: inline; width: inherit;"\n                        size="7"\n                        maxlength="7"\n                        pattern="^#(?:[0-9a-fA-F]{3}){1,2}$"\n                    >\n                ';
+                    break;
+
+                default:
+                    input = '\n                    <input \n                        d-ref="field" \n                        id="' + this.props.id + '" \n                        type="' + this.props.type + '" \n                        name="' + this.props.name + '" \n                        d-bind="value"\n                        \n                        class="' + this.props.classField + '"\n                        required=' + this.props.required + '\n                    >\n                ';
+            }
+
+            return '\n            <div class="' + this.props.classInner + '">\n                <label for="' + this.props.id + '">\n                    ' + this.props.label + ' ' + (this.props.required ? '<span class="required">*</span>' : '') + ' \n                </label>\n                ' + (this.props.description ? '<div>' + this.props.description + '</div>' : '') + '\n                <div>\n                    ' + input + '\n                </div>\n                <div>\n                    ' + this.props.value + '\n                </div>\n                \n            </div>\n        ';
         }
     }, {
-        key: 'clickMe',
-        value: function clickMe() {
-            alert('Ciao!');
+        key: 'setNew',
+        value: function setNew() {
+            this.props.value = '';
         }
     }, {
         key: 'onCreate',
-        value: function onCreate() {}
+        value: function onCreate() {
+            this.props.id = this.props.id || 'form-field-' + Math.random();
+        }
     }, {
         key: 'onMount',
-        value: function onMount() {}
+        value: function onMount() {
+            var _this3 = this;
+
+            if (this.props.type === 'color') {
+                this.ref.colorInput.addEventListener('change', function (e) {
+                    _this3.ref.field.value = e.target.value;
+                });
+                this.ref.field.addEventListener('change', function (e) {
+                    _this3.ref.colorInput.value = e.target.value;
+                });
+                var height = this.ref.field.getBoundingClientRect().height;
+                this.ref.colorInput.style.height = height + 'px';
+                this.ref.colorInput.style.width = height + 'px';
+            } else if (this.props.type === 'select') {
+                this.ref.selectHidden.addEventListener('change', function (e) {
+                    _this3.$firstValue = e.target.value;
+                    _this3.ref.field.value = e.target.value;
+                });
+                this.ref.field.addEventListener('change', function (e) {
+                    _this3.ref.selectHidden.value = e.target.value;
+                });
+                this.$loadStore();
+            }
+        }
     }, {
         key: 'onUpdate',
         value: function onUpdate() {}

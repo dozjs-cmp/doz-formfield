@@ -1,6 +1,6 @@
 {
     "name": "doz-formfield",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "All form elements component for DOZ",
     "main": "dist/bundle.js",
     "scripts": {
@@ -19,13 +19,13 @@
     ],
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/[YOUR-GITHUB-SPACE]/[YOUR-REPOSITORY].git"
+        "url": "git+https://github.com/dozjs-cmp/doz-formfield.git"
     },
     "bugs": {
-        "url": "https://github.com/[YOUR-GITHUB-SPACE]/[YOUR-REPOSITORY]/issues"
+        "url": "https://github.com/dozjs-cmp/doz-formfield/issues"
     },
-    "homepage": "https://github.com/[YOUR-GITHUB-SPACE]/[YOUR-REPOSITORY]#readme",
-    "author": "[YOUR-NAME]",
+    "homepage": "https://github.com/dozjs-cmp/doz-formfield#readme",
+    "author": "Pietro Lembo",
     "license": "MIT",
     "devDependencies": {
         "babel-core": "^6.26.0",
