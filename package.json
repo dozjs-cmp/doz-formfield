@@ -1,7 +1,7 @@
 {
-    "name": "YOUR-COMPONENT",
-    "version": "0.0.0",
-    "description": "[YOUR-COMPONENT-DESCRIPTION]",
+    "name": "doz-formfield",
+    "version": "0.1.1",
+    "description": "All form elements component for DOZ",
     "main": "dist/bundle.js",
     "scripts": {
         "start": "webpack-dev-server --open",
