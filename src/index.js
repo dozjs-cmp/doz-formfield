@@ -131,11 +131,7 @@ export default class extends Component{
                 ${this.props.description ? `<div>${this.props.description}</div>` : ''}
                 <div>
                     ${input}
-                </div>
-                <div>
-                    ${this.props.value}
-                </div>
-                
+                </div>        
             </div>
         `
     }
