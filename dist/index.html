@@ -28,13 +28,15 @@
         root: '#app',
         template(h) {
             return h`
-                <doz-formfield
-                    type="text"
-                    label="Insert your name"
-                    name="Name"
-                    required="true"
-                    />
-
+                <div>
+                    <doz-formfield type="text" label="Insert your name" name="Name" required="true"/>
+                </div>
+                <div>
+                    <doz-formfield type="select" label="Chose a field" name="select" options="[false,true]" required="true"><doz-formfield/>
+                </div>
+                <div>
+                    <doz-formfield type="checkbox" label="isActive" name="isActive"></doz-formfield>
+                </div>
             `
         }
     });

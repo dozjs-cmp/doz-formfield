@@ -1,4 +1,14 @@
 import {Component} from "doz";
+import axios from 'axios'
+import typis from 'typis'
+
+function normalizeOptions(options) {
+    if (typis.is(options, 'array')) {
+        return options;
+    } else {
+        return Object.entries(options).map(([key, value]) => ({key, value}));
+    }
+}
 
 export default class extends Component{
 
@@ -22,7 +32,8 @@ export default class extends Component{
             rowPath: '',
             valueRow: '',
             displayRow: '',
-            showValue: false
+            showValue: false,
+            showOpenUrl: true
         }
     }
 
@@ -33,18 +44,13 @@ export default class extends Component{
             case 'select':
 
                 input = `
-                    <input 
-                        d-ref="selectHidden" 
-                        name="${this.props.name}" 
-                        type="hidden"
-                    >
                     <select 
                         id="${this.props.id}" 
                         d-ref="field" 
                         class="${this.props.classField}"
-                        required="${this.props.required}"
+                        ${this.props.required ? 'required' : ''}
                     >
-                    ${this.each(this.props.options, item => {
+                    ${this.each(normalizeOptions(this.props.options), item => {
                     if (typeof item === 'object')
                         return `
                                 <option ${this.props.value == item.value ? 'selected' : ''} value="${item.value}">${item.key} ${this.props.showValue ? `(${item.value})` : ''}</option>
@@ -55,6 +61,12 @@ export default class extends Component{
                             `
                 })}
                     </select>
+                    <input 
+                        d-ref="selectHidden" 
+                        name="${this.props.name}" 
+                        type="hidden"
+                        d-bind="value"
+                    >
                 `;
                 break;
 
@@ -65,7 +77,7 @@ export default class extends Component{
                         d-ref="field" 
                         name="${this.props.name}" 
                         class="${this.props.classField}"
-                        required=${this.props.required}
+                        ${this.props.required ? 'required' : ''}
                     > ${this.props.value}</textarea>
                 `;
                 break;
@@ -79,7 +91,7 @@ export default class extends Component{
                         d-ref="field" 
                         name="${this.props.name}" 
                         class="${this.props.classField}"
-                        required=${this.props.required}
+                        ${this.props.required ? 'required' : ''}
                     > $${this.props.done} <br/>
                 `;
                 break;
@@ -97,9 +109,9 @@ export default class extends Component{
                         id="${this.props.id}" 
                         type="text" 
                         name="${this.props.name}" 
-                        d-bind="value" 
+                        value="${this.props.value}" 
                         class="${this.props.classField}"
-                        required="${this.props.required}"
+                        ${this.props.required ? 'required' : ''}
                         style="display: inline; width: inherit;"
                         size="7"
                         maxlength="7"
@@ -131,7 +143,7 @@ export default class extends Component{
                 ${this.props.description ? `<div>${this.props.description}</div>` : ''}
                 <div>
                     ${input}
-                </div>        
+                </div>
             </div>
         `
     }
@@ -156,6 +168,7 @@ export default class extends Component{
             this.ref.colorInput.style.height = height + 'px';
             this.ref.colorInput.style.width = height + 'px';
         } else if (this.props.type === 'select') {
+            this.ref.selectHidden.value = this.ref.field.value;
             this.ref.selectHidden.addEventListener('change', e => {
                 this.$firstValue = e.target.value;
                 this.ref.field.value = e.target.value;
@@ -163,6 +176,15 @@ export default class extends Component{
             this.ref.field.addEventListener('change', e => {
                 this.ref.selectHidden.value = e.target.value;
             });
+
+            let options = normalizeOptions(this.props.options);
+
+            if (typeof options[0] === 'string') {
+                this.props.value = options[0];
+            } else if (typeof options[0] === 'object') {
+                this.props.value = options[0].value;
+            } else {}
+
             this.$loadStore();
         }
     }
