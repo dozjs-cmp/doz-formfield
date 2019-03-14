@@ -70,10 +70,8 @@ new Doz({
 | name | | Input name |
 | classField | | CSS field class |
 | value | | The initial value for the component |
-| required | false | Set the required field
- |
-| showOpenUrl | false | | 
-If the value is a url it gives the possibility to open the link |
+| required | false | Set the required field |
+| showOpenUrl | false | | If the value is a url it gives the possibility to open the link |
 
 ## Events
 
