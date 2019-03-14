@@ -6,7 +6,7 @@ All form elements component for DOZ
 npm install --save doz-formfield
 ```
 
-Live <a href="https://dozjs-cmp.github.io/doz-formfield/example/index.html">here</a>
+Live <a href="https://dozjs-cmp.github.io/doz-formfield/dist/index.html">here</a>
 
 ## Usage
 
