@@ -58,8 +58,8 @@ export default class extends Component{
                     else
                         return `
                                 <option ${this.props.value === item ? 'selected' : ''} value="${item}">${item}</option>
-                            `
-                })}
+                            `;
+                    })}
                     </select>
                     <input 
                         d-ref="selectHidden" 
@@ -92,7 +92,7 @@ export default class extends Component{
                         name="${this.props.name}" 
                         class="${this.props.classField}"
                         ${this.props.required ? 'required' : ''}
-                    > $${this.props.done} <br/>
+                    >
                 `;
                 break;
 
@@ -185,7 +185,7 @@ export default class extends Component{
                 this.props.value = options[0].value;
             } else {}
 
-            this.$loadStore();
+            //this.$loadStore();
         }
     }
 

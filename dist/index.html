@@ -29,14 +29,18 @@
         template(h) {
             return h`
                 <div>
-                    <doz-formfield type="text" label="Insert your name" name="Name" required="true"/>
+                    <doz-formfield type="text" label="Insert your name" name="name" required="true"/>
                 </div>
                 <div>
-                    <doz-formfield type="select" label="Chose a field" name="select" options="[false,true]" required="true"><doz-formfield/>
+                    <doz-formfield type="text" label="Insert your surname" name="surname" required="true"/>
                 </div>
                 <div>
-                    <doz-formfield type="checkbox" label="isActive" name="isActive"></doz-formfield>
+                    <doz-formfield type="select" label="Male or female" name="select" options='["male","female"]' required="true"/>
                 </div>
+                <div>
+                    <doz-formfield type="textarea" label="Insert a message" name="textarea" required="true"/>
+                </div>
+                
             `
         }
     });
