@@ -132,7 +132,10 @@ export default class extends Component{
                         class="${this.props.classField}"
                         required=${this.props.required}
                     >
-                `
+                `;
+                if (this.props.type === 'url' && this.props.showOpenUrl) {
+                    input += `<small style="text-decoration: underline; cursor: pointer" onclick="this.$openUrl()">Open url</small>`;
+                }
         }
 
         return `
@@ -146,6 +149,12 @@ export default class extends Component{
                 </div>
             </div>
         `
+    }
+
+    $openUrl() {
+        if(this.ref.field.value) {
+            window.open(this.ref.field.value);
+        }
     }
 
     setNew() {
