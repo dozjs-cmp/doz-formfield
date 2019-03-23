@@ -30,6 +30,9 @@ new Doz({
                 <div>
                     <doz-formfield type="textarea" label="Insert a message" name="textarea" required="true"/>
                 </div>
+                <div>
+                    <doz-formfield type="url" label="Url Type" name="url" value="http://www.google.it"/>
+                </div>
             `
         }
     });
@@ -66,12 +69,12 @@ new Doz({
 ## Props
 | Name | Default | Description |
 | ---- | ------- | ----------- |
-| type | text | The type of the component (text, textarea, select, checkbox) |
+| type | text | The type of the component (text, textarea, select, checkbox, url) |
 | name | | Input name |
 | classField | | CSS field class |
 | value | | The initial value for the component |
 | required | false | Set the required field |
-| showOpenUrl | false | If the value is a url it gives the possibility to open the link |
+| showOpenUrl | true | If the type is url, it gives the possibility to open the link |
 
 ## Events
 
