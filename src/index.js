@@ -46,7 +46,8 @@ export default class extends Component{
                 input = `
                     <select
                         forceupdate 
-                        id="${this.props.id}" 
+                        id="${this.props.id}"
+                        name="${this.props.name}" 
                         d-ref="field" 
                         class="${this.props.classField}"
                         ${this.props.required ? 'required' : ''}
@@ -64,8 +65,7 @@ export default class extends Component{
                     </select>
                     <input
                         forceupdate 
-                        d-ref="selectHidden" 
-                        name="${this.props.name}" 
+                        d-ref="selectHidden"  
                         type="hidden"
                         d-bind="value"
                     >
