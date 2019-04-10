@@ -1,4 +1,4 @@
-// [DozFormfield]  Build version: 0.1.7  
+// [DozFormfield]  Build version: 0.1.8  
  (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory(require("doz"));
@@ -893,19 +893,19 @@ var _class = function (_Component) {
                     break;
 
                 case 'textarea':
-                    input = '\n                    <textarea \n                        forceupdate                       \n                        id="' + this.props.id + '" \n                        d-ref="field" \n                        name="' + this.props.name + '" \n                        class="' + this.props.classField + '"\n                        ' + (this.props.required ? 'required' : '') + '\n                    > ' + this.props.value + '</textarea>\n                ';
+                    input = '\n                    <textarea \n                                               \n                        id="' + this.props.id + '" \n                        d-ref="field" \n                        name="' + this.props.name + '" \n                        class="' + this.props.classField + '"\n                        ' + (this.props.required ? 'required' : '') + '\n                    > ' + this.props.value + '</textarea>\n                ';
                     break;
 
                 case 'checkbox':
-                    input = '\n                    <input\n                        forceupdate \n                        id="' + this.props.id + '" \n                        type="checkbox" \n                        d-bind="done"  \n                        d-ref="field" \n                        name="' + this.props.name + '" \n                        class="' + this.props.classField + '"\n                        ' + (this.props.required ? 'required' : '') + '\n                    >\n                ';
+                    input = '\n                    <input\n                         \n                        id="' + this.props.id + '" \n                        type="checkbox" \n                        d-bind="done"  \n                        d-ref="field" \n                        name="' + this.props.name + '" \n                        class="' + this.props.classField + '"\n                        ' + (this.props.required ? 'required' : '') + '\n                    >\n                ';
                     break;
 
                 case 'color':
-                    input = '\n                    <input\n                        forceupdate \n                        d-ref="colorInput" \n                        type="color" \n                        d-bind="value" \n                        style="vertical-align: bottom"\n                    >\n                    <input\n                        forceupdate \n                        d-ref="field" \n                        id="' + this.props.id + '" \n                        type="text" \n                        name="' + this.props.name + '" \n                        value="' + this.props.value + '" \n                        class="' + this.props.classField + '"\n                        ' + (this.props.required ? 'required' : '') + '\n                        style="display: inline; width: inherit;"\n                        size="7"\n                        maxlength="7"\n                        pattern="^#(?:[0-9a-fA-F]{3}){1,2}$"\n                    >\n                ';
+                    input = '\n                    <input\n                         \n                        d-ref="colorInput" \n                        type="color" \n                        d-bind="value" \n                        style="vertical-align: bottom"\n                    >\n                    <input\n                         \n                        d-ref="field" \n                        id="' + this.props.id + '" \n                        type="text" \n                        name="' + this.props.name + '" \n                        value="' + this.props.value + '" \n                        class="' + this.props.classField + '"\n                        ' + (this.props.required ? 'required' : '') + '\n                        style="display: inline; width: inherit;"\n                        size="7"\n                        maxlength="7"\n                        pattern="^#(?:[0-9a-fA-F]{3}){1,2}$"\n                    >\n                ';
                     break;
 
                 default:
-                    input = '\n                    <input\n                        forceupdate \n                        d-ref="field" \n                        id="' + this.props.id + '" \n                        type="' + this.props.type + '" \n                        name="' + this.props.name + '" \n                        d-bind="value"\n                        \n                        class="' + this.props.classField + '"\n                        required=' + this.props.required + '\n                    >\n                ';
+                    input = '\n                    <input\n                         \n                        d-ref="field" \n                        id="' + this.props.id + '" \n                        type="' + this.props.type + '" \n                        name="' + this.props.name + '" \n                        d-bind="value"\n                        \n                        class="' + this.props.classField + '"\n                        required=' + this.props.required + '\n                    >\n                ';
                     if (this.props.type === 'url' && this.props.showOpenUrl) {
                         input += '<small style="text-decoration: underline; cursor: pointer" onclick="this.$openUrl()">Open url</small>';
                     }
