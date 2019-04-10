@@ -44,7 +44,8 @@ export default class extends Component{
             case 'select':
 
                 input = `
-                    <select 
+                    <select
+                        forceupdate 
                         id="${this.props.id}" 
                         d-ref="field" 
                         class="${this.props.classField}"
@@ -61,7 +62,8 @@ export default class extends Component{
                             `;
                     })}
                     </select>
-                    <input 
+                    <input
+                        forceupdate 
                         d-ref="selectHidden" 
                         name="${this.props.name}" 
                         type="hidden"
@@ -73,6 +75,7 @@ export default class extends Component{
             case 'textarea':
                 input = `
                     <textarea 
+                        forceupdate                       
                         id="${this.props.id}" 
                         d-ref="field" 
                         name="${this.props.name}" 
@@ -84,7 +87,8 @@ export default class extends Component{
 
             case 'checkbox':
                 input = `
-                    <input 
+                    <input
+                        forceupdate 
                         id="${this.props.id}" 
                         type="checkbox" 
                         d-bind="done"  
@@ -98,13 +102,15 @@ export default class extends Component{
 
             case 'color':
                 input = `
-                    <input 
+                    <input
+                        forceupdate 
                         d-ref="colorInput" 
                         type="color" 
                         d-bind="value" 
                         style="vertical-align: bottom"
                     >
-                    <input 
+                    <input
+                        forceupdate 
                         d-ref="field" 
                         id="${this.props.id}" 
                         type="text" 
@@ -122,7 +128,8 @@ export default class extends Component{
 
             default:
                 input = `
-                    <input 
+                    <input
+                        forceupdate 
                         d-ref="field" 
                         id="${this.props.id}" 
                         type="${this.props.type}" 
