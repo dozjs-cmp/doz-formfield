@@ -1,4 +1,4 @@
-// [DozFormfield]  Build version: 0.1.8  
+// [DozFormfield]  Build version: 0.1.9  
  (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory(require("doz"));
@@ -905,7 +905,7 @@ var _class = function (_Component) {
                     break;
 
                 default:
-                    input = '\n                    <input\n                         \n                        d-ref="field" \n                        id="' + this.props.id + '" \n                        type="' + this.props.type + '" \n                        name="' + this.props.name + '" \n                        d-bind="value"\n                        \n                        class="' + this.props.classField + '"\n                        required=' + this.props.required + '\n                    >\n                ';
+                    input = '\n                    <input\n                         \n                        d-ref="field" \n                        id="' + this.props.id + '" \n                        type="' + this.props.type + '" \n                        name="' + this.props.name + '" \n                        d-bind="value"\n                        \n                        class="' + this.props.classField + '"\n                        ' + (this.props.required ? 'required' : '') + '\n                    >\n                ';
                     if (this.props.type === 'url' && this.props.showOpenUrl) {
                         input += '<small style="text-decoration: underline; cursor: pointer" onclick="this.$openUrl()">Open url</small>';
                     }

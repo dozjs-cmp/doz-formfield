@@ -137,7 +137,7 @@ export default class extends Component{
                         d-bind="value"
                         
                         class="${this.props.classField}"
-                        required=${this.props.required}
+                        ${this.props.required ? 'required' : ''}
                     >
                 `;
                 if (this.props.type === 'url' && this.props.showOpenUrl) {
