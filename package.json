@@ -1,6 +1,6 @@
 {
     "name": "doz-formfield",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "description": "All form elements component for DOZ",
     "main": "dist/bundle.js",
     "scripts": {
