@@ -1,4 +1,4 @@
-// [DozFormfield]  Build version: 0.2.1  
+// [DozFormfield]  Build version: 0.3.0  
  (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory(require("doz"));
@@ -872,7 +872,8 @@ var _class = function (_Component) {
             valueRow: '',
             displayRow: '',
             showValue: false,
-            showOpenUrl: true
+            showOpenUrl: true,
+            disabled: false
         };
         return _this;
     }
@@ -887,25 +888,25 @@ var _class = function (_Component) {
             switch (this.props.type) {
                 case 'select':
 
-                    input = '\n                    <select\n                         \n                        id="' + this.props.id + '"\n                        name="' + this.props.name + '" \n                        d-ref="field" \n                        class="' + this.props.classField + '"\n                        ' + (this.props.required ? 'required' : '') + '\n                    >\n                    ' + this.each(normalizeOptions(this.props.options), function (item) {
+                    input = '\n                    <select\n                         \n                        id="' + this.props.id + '"\n                        name="' + this.props.name + '" \n                        d-ref="field" \n                        class="' + this.props.classField + '"\n                        ' + (this.props.required ? 'required' : '') + '\n                        ' + (this.props.disabled ? 'disabled' : '') + '\n                    >\n                    ' + this.each(normalizeOptions(this.props.options), function (item) {
                         if ((typeof item === 'undefined' ? 'undefined' : _typeof(item)) === 'object') return '\n                                <option ' + (_this2.props.value == item.value ? 'selected' : '') + ' value="' + item.value + '">' + item.key + ' ' + (_this2.props.showValue ? '(' + item.value + ')' : '') + '</option>\n                            ';else return '\n                                <option ' + (_this2.props.value === item ? 'selected' : '') + ' value="' + item + '">' + item + '</option>\n                            ';
                     }) + '\n                    </select>\n                    <input\n                         \n                        d-ref="selectHidden"  \n                        type="hidden"\n                        d-bind="value"\n                    >\n                ';
                     break;
 
                 case 'textarea':
-                    input = '\n                    <textarea \n                                               \n                        id="' + this.props.id + '" \n                        d-ref="field" \n                        name="' + this.props.name + '" \n                        class="' + this.props.classField + '"\n                        ' + (this.props.required ? 'required' : '') + '\n                    > ' + this.props.value + '</textarea>\n                ';
+                    input = '\n                    <textarea \n                                               \n                        id="' + this.props.id + '" \n                        d-ref="field" \n                        name="' + this.props.name + '" \n                        class="' + this.props.classField + '"\n                        ' + (this.props.required ? 'required' : '') + '\n                        ' + (this.props.disabled ? 'disabled' : '') + '\n                    > ' + this.props.value + '</textarea>\n                ';
                     break;
 
                 case 'checkbox':
-                    input = '\n                    <input\n                         \n                        id="' + this.props.id + '" \n                        type="checkbox" \n                        d-bind="done"  \n                        d-ref="field" \n                        name="' + this.props.name + '" \n                        class="' + this.props.classField + '"\n                        ' + (this.props.required ? 'required' : '') + '\n                    >\n                ';
+                    input = '\n                    <input\n                         \n                        id="' + this.props.id + '" \n                        type="checkbox" \n                        d-bind="done"  \n                        d-ref="field" \n                        name="' + this.props.name + '" \n                        class="' + this.props.classField + '"\n                        ' + (this.props.required ? 'required' : '') + '\n                        ' + (this.props.disabled ? 'disabled' : '') + '\n                    >\n                ';
                     break;
 
                 case 'color':
-                    input = '\n                    <input\n                         \n                        d-ref="colorInput" \n                        type="color" \n                        d-bind="value" \n                        style="vertical-align: bottom"\n                    >\n                    <input\n                         \n                        d-ref="field" \n                        id="' + this.props.id + '" \n                        type="text" \n                        name="' + this.props.name + '" \n                        value="' + this.props.value + '" \n                        class="' + this.props.classField + '"\n                        ' + (this.props.required ? 'required' : '') + '\n                        style="display: inline; width: inherit;"\n                        size="7"\n                        maxlength="7"\n                        pattern="^#(?:[0-9a-fA-F]{3}){1,2}$"\n                    >\n                ';
+                    input = '\n                    <input\n                         \n                        d-ref="colorInput" \n                        type="color" \n                        d-bind="value" \n                        style="vertical-align: bottom"\n                    >\n                    <input\n                         \n                        d-ref="field" \n                        id="' + this.props.id + '" \n                        type="text" \n                        name="' + this.props.name + '" \n                        value="' + this.props.value + '" \n                        class="' + this.props.classField + '"\n                        ' + (this.props.required ? 'required' : '') + '\n                        ' + (this.props.disabled ? 'disabled' : '') + '\n                        style="display: inline; width: inherit;"\n                        size="7"\n                        maxlength="7"\n                        pattern="^#(?:[0-9a-fA-F]{3}){1,2}$"\n                    >\n                ';
                     break;
 
                 default:
-                    input = '\n                    <input\n                         \n                        d-ref="field" \n                        id="' + this.props.id + '" \n                        type="' + this.props.type + '" \n                        name="' + this.props.name + '" \n                        d-bind="value"\n                        ' + (this.props.required ? 'required' : '') + '\n                        class="' + this.props.classField + '"\n                    >\n                ';
+                    input = '\n                    <input\n                         \n                        d-ref="field" \n                        id="' + this.props.id + '" \n                        type="' + this.props.type + '" \n                        name="' + this.props.name + '" \n                        d-bind="value"\n                        ' + (this.props.required ? 'required' : '') + '\n                        ' + (this.props.disabled ? 'disabled' : '') + '\n                        class="' + this.props.classField + '"\n                    >\n                ';
                     if (this.props.type === 'url' && this.props.showOpenUrl) {
                         input += '<small style="text-decoration: underline; cursor: pointer" onclick="this.$openUrl()">Open url</small>';
                     }

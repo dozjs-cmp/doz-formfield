@@ -74,6 +74,7 @@ new Doz({
 | classField | | CSS field class |
 | value | | The initial value for the component |
 | required | false | Set the required field |
+| disabled | false | Set the disabled field |
 | showOpenUrl | true | If the type is url, it gives the possibility to open the link |
 
 ## Events

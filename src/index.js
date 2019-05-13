@@ -33,7 +33,8 @@ export default class extends Component{
             valueRow: '',
             displayRow: '',
             showValue: false,
-            showOpenUrl: true
+            showOpenUrl: true,
+            disabled: false
         }
     }
 
@@ -51,6 +52,7 @@ export default class extends Component{
                         d-ref="field" 
                         class="${this.props.classField}"
                         ${this.props.required ? 'required' : ''}
+                        ${this.props.disabled ? 'disabled' : ''}
                     >
                     ${this.each(normalizeOptions(this.props.options), item => {
                     if (typeof item === 'object')
@@ -81,6 +83,7 @@ export default class extends Component{
                         name="${this.props.name}" 
                         class="${this.props.classField}"
                         ${this.props.required ? 'required' : ''}
+                        ${this.props.disabled ? 'disabled' : ''}
                     > ${this.props.value}</textarea>
                 `;
                 break;
@@ -96,6 +99,7 @@ export default class extends Component{
                         name="${this.props.name}" 
                         class="${this.props.classField}"
                         ${this.props.required ? 'required' : ''}
+                        ${this.props.disabled ? 'disabled' : ''}
                     >
                 `;
                 break;
@@ -118,6 +122,7 @@ export default class extends Component{
                         value="${this.props.value}" 
                         class="${this.props.classField}"
                         ${this.props.required ? 'required' : ''}
+                        ${this.props.disabled ? 'disabled' : ''}
                         style="display: inline; width: inherit;"
                         size="7"
                         maxlength="7"
@@ -136,6 +141,7 @@ export default class extends Component{
                         name="${this.props.name}" 
                         d-bind="value"
                         ${this.props.required ? 'required' : ''}
+                        ${this.props.disabled ? 'disabled' : ''}
                         class="${this.props.classField}"
                     >
                 `;
