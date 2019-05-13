@@ -45,7 +45,7 @@ export default class extends Component{
 
                 input = `
                     <select
-                        forceupdate 
+                         
                         id="${this.props.id}"
                         name="${this.props.name}" 
                         d-ref="field" 
@@ -64,7 +64,7 @@ export default class extends Component{
                     })}
                     </select>
                     <input
-                        forceupdate 
+                         
                         d-ref="selectHidden"  
                         type="hidden"
                         d-bind="value"
@@ -135,9 +135,8 @@ export default class extends Component{
                         type="${this.props.type}" 
                         name="${this.props.name}" 
                         d-bind="value"
-                        
-                        class="${this.props.classField}"
                         ${this.props.required ? 'required' : ''}
+                        class="${this.props.classField}"
                     >
                 `;
                 if (this.props.type === 'url' && this.props.showOpenUrl) {
