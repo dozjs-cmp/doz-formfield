@@ -1,4 +1,4 @@
-// [DozFormfield]  Build version: 0.3.0  
+// [DozFormfield]  Build version: 0.4.0  
  (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory(require("doz"));
@@ -873,7 +873,8 @@ var _class = function (_Component) {
             displayRow: '',
             showValue: false,
             showOpenUrl: true,
-            disabled: false
+            disabled: false,
+            forceupdate: false
         };
         return _this;
     }
@@ -888,7 +889,7 @@ var _class = function (_Component) {
             switch (this.props.type) {
                 case 'select':
 
-                    input = '\n                    <select\n                         \n                        id="' + this.props.id + '"\n                        name="' + this.props.name + '" \n                        d-ref="field" \n                        class="' + this.props.classField + '"\n                        ' + (this.props.required ? 'required' : '') + '\n                        ' + (this.props.disabled ? 'disabled' : '') + '\n                    >\n                    ' + this.each(normalizeOptions(this.props.options), function (item) {
+                    input = '\n                    <select\n                         \n                        id="' + this.props.id + '"\n                        name="' + this.props.name + '" \n                        d-ref="field" \n                        class="' + this.props.classField + '"\n                        ' + (this.props.required ? 'required' : '') + '\n                        ' + (this.props.disabled ? 'disabled' : '') + '\n                        ' + (this.props.forceupdate ? 'forceupdate' : '') + '\n                    >\n                    ' + this.each(normalizeOptions(this.props.options), function (item) {
                         if ((typeof item === 'undefined' ? 'undefined' : _typeof(item)) === 'object') return '\n                                <option ' + (_this2.props.value == item.value ? 'selected' : '') + ' value="' + item.value + '">' + item.key + ' ' + (_this2.props.showValue ? '(' + item.value + ')' : '') + '</option>\n                            ';else return '\n                                <option ' + (_this2.props.value === item ? 'selected' : '') + ' value="' + item + '">' + item + '</option>\n                            ';
                     }) + '\n                    </select>\n                    <input\n                         \n                        d-ref="selectHidden"  \n                        type="hidden"\n                        d-bind="value"\n                    >\n                ';
                     break;
