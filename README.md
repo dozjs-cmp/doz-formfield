@@ -75,6 +75,7 @@ new Doz({
 | value | | The initial value for the component |
 | required | false | Set the required field |
 | disabled | false | Set the disabled field |
+| forceupdate | false | Set the forceupdate field |
 | showOpenUrl | true | If the type is url, it gives the possibility to open the link |
 
 ## Events

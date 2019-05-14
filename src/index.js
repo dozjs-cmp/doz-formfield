@@ -34,7 +34,8 @@ export default class extends Component{
             displayRow: '',
             showValue: false,
             showOpenUrl: true,
-            disabled: false
+            disabled: false,
+            forceupdate: false
         }
     }
 
@@ -53,6 +54,7 @@ export default class extends Component{
                         class="${this.props.classField}"
                         ${this.props.required ? 'required' : ''}
                         ${this.props.disabled ? 'disabled' : ''}
+                        ${this.props.forceupdate ? 'forceupdate' : ''}
                     >
                     ${this.each(normalizeOptions(this.props.options), item => {
                     if (typeof item === 'object')
