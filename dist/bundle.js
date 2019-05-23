@@ -1,4 +1,4 @@
-// [DozFormfield]  Build version: 0.4.0  
+// [DozFormfield]  Build version: 0.5.0  
  (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory(require("doz"));
@@ -895,7 +895,7 @@ var _class = function (_Component) {
                     break;
 
                 case 'textarea':
-                    input = '\n                    <textarea \n                                               \n                        id="' + this.props.id + '" \n                        d-ref="field" \n                        name="' + this.props.name + '" \n                        class="' + this.props.classField + '"\n                        ' + (this.props.required ? 'required' : '') + '\n                        ' + (this.props.disabled ? 'disabled' : '') + '\n                    > ' + this.props.value + '</textarea>\n                ';
+                    input = '\n                    <textarea                    \n                        id="' + this.props.id + '" \n                        d-ref="field" \n                        name="' + this.props.name + '" \n                        class="' + this.props.classField + '"\n                        ' + (this.props.required ? 'required' : '') + '\n                        ' + (this.props.disabled ? 'disabled' : '') + '\n                    >' + this.props.value + '</textarea>\n                ';
                     break;
 
                 case 'checkbox':
