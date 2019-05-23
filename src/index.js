@@ -78,15 +78,14 @@ export default class extends Component{
 
             case 'textarea':
                 input = `
-                    <textarea 
-                                               
+                    <textarea                    
                         id="${this.props.id}" 
                         d-ref="field" 
                         name="${this.props.name}" 
                         class="${this.props.classField}"
                         ${this.props.required ? 'required' : ''}
                         ${this.props.disabled ? 'disabled' : ''}
-                    > ${this.props.value}</textarea>
+                    >${this.props.value}</textarea>
                 `;
                 break;
 
