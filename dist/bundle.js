@@ -1,4 +1,4 @@
-// [DozFormfield]  Build version: 0.5.0  
+// [DozFormfield]  Build version: 1.0.0  
  (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory(require("doz"));
@@ -814,6 +814,17 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
+var _templateObject = _taggedTemplateLiteral(['\n                    \n                    <select\n                         \n                        id="', '"\n                        name="', '" \n                        d-ref="field" \n                        class="', '"\n                        ', '\n                        ', '\n                        ', '\n                    >\n                    ', '\n                    </select>\n                    <input\n                         \n                        d-ref="selectHidden"  \n                        type="hidden"\n                        d-bind="value"\n                    >\n                '], ['\n                    \n                    <select\n                         \n                        id="', '"\n                        name="', '" \n                        d-ref="field" \n                        class="', '"\n                        ', '\n                        ', '\n                        ', '\n                    >\n                    ', '\n                    </select>\n                    <input\n                         \n                        d-ref="selectHidden"  \n                        type="hidden"\n                        d-bind="value"\n                    >\n                ']),
+    _templateObject2 = _taggedTemplateLiteral(['\n                                <option ', ' value="', '">', ' ', '</option>\n                            '], ['\n                                <option ', ' value="', '">', ' ', '</option>\n                            ']),
+    _templateObject3 = _taggedTemplateLiteral(['\n                                <option ', ' value="', '">', '</option>\n                            '], ['\n                                <option ', ' value="', '">', '</option>\n                            ']),
+    _templateObject4 = _taggedTemplateLiteral(['\n                    <textarea                    \n                        id="', '" \n                        d-ref="field" \n                        name="', '" \n                        class="', '"\n                        ', '\n                        ', '\n                    >', '</textarea>\n                '], ['\n                    <textarea                    \n                        id="', '" \n                        d-ref="field" \n                        name="', '" \n                        class="', '"\n                        ', '\n                        ', '\n                    >', '</textarea>\n                ']),
+    _templateObject5 = _taggedTemplateLiteral(['\n                    <input\n                         \n                        id="', '" \n                        type="checkbox" \n                        d-bind="done"  \n                        d-ref="field" \n                        name="', '" \n                        class="', '"\n                        ', '\n                        ', '\n                    >\n                '], ['\n                    <input\n                         \n                        id="', '" \n                        type="checkbox" \n                        d-bind="done"  \n                        d-ref="field" \n                        name="', '" \n                        class="', '"\n                        ', '\n                        ', '\n                    >\n                ']),
+    _templateObject6 = _taggedTemplateLiteral(['\n                    <input\n                         \n                        d-ref="colorInput" \n                        type="color" \n                        d-bind="value" \n                        style="vertical-align: bottom"\n                    >\n                    <input\n                         \n                        d-ref="field" \n                        id="', '" \n                        type="text" \n                        name="', '" \n                        value="', '" \n                        class="', '"\n                        ', '\n                        ', '\n                        style="display: inline; width: inherit;"\n                        size="7"\n                        maxlength="7"\n                        pattern="^#(?:[0-9a-fA-F]{3}){1,2}$"\n                    >\n                '], ['\n                    <input\n                         \n                        d-ref="colorInput" \n                        type="color" \n                        d-bind="value" \n                        style="vertical-align: bottom"\n                    >\n                    <input\n                         \n                        d-ref="field" \n                        id="', '" \n                        type="text" \n                        name="', '" \n                        value="', '" \n                        class="', '"\n                        ', '\n                        ', '\n                        style="display: inline; width: inherit;"\n                        size="7"\n                        maxlength="7"\n                        pattern="^#(?:[0-9a-fA-F]{3}){1,2}$"\n                    >\n                ']),
+    _templateObject7 = _taggedTemplateLiteral(['\n                    <input\n                         \n                        d-ref="field" \n                        id="', '" \n                        type="', '" \n                        name="', '" \n                        d-bind="value"\n                        ', '\n                        ', '\n                        class="', '"\n                    >\n                '], ['\n                    <input\n                         \n                        d-ref="field" \n                        id="', '" \n                        type="', '" \n                        name="', '" \n                        d-bind="value"\n                        ', '\n                        ', '\n                        class="', '"\n                    >\n                ']),
+    _templateObject8 = _taggedTemplateLiteral(['\n            <div class="', '">\n                <label for="', '">\n                    ', ' ', ' \n                </label>\n                ', '\n                <div>\n                    ', ' \n                    ', ' \n                </div>\n            </div>\n        '], ['\n            <div class="', '">\n                <label for="', '">\n                    ', ' ', ' \n                </label>\n                ', '\n                <div>\n                    ', ' \n                    ', ' \n                </div>\n            </div>\n        ']),
+    _templateObject9 = _taggedTemplateLiteral(['<div>', '</div>'], ['<div>', '</div>']),
+    _templateObject10 = _taggedTemplateLiteral(['<small style="text-decoration: underline; cursor: pointer" onclick="this.$openUrl()">Open url</small>'], ['<small style="text-decoration: underline; cursor: pointer" onclick="this.$openUrl()">Open url</small>']);
+
 var _doz = __webpack_require__(2);
 
 var _axios = __webpack_require__(10);
@@ -825,6 +836,8 @@ var _typis = __webpack_require__(30);
 var _typis2 = _interopRequireDefault(_typis);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -885,41 +898,41 @@ var _class = function (_Component) {
             var _this2 = this;
 
             var input = '';
-
             switch (this.props.type) {
                 case 'select':
 
-                    input = '\n                    <select\n                         \n                        id="' + this.props.id + '"\n                        name="' + this.props.name + '" \n                        d-ref="field" \n                        class="' + this.props.classField + '"\n                        ' + (this.props.required ? 'required' : '') + '\n                        ' + (this.props.disabled ? 'disabled' : '') + '\n                        ' + (this.props.forceupdate ? 'forceupdate' : '') + '\n                    >\n                    ' + this.each(normalizeOptions(this.props.options), function (item) {
-                        if ((typeof item === 'undefined' ? 'undefined' : _typeof(item)) === 'object') return '\n                                <option ' + (_this2.props.value == item.value ? 'selected' : '') + ' value="' + item.value + '">' + item.key + ' ' + (_this2.props.showValue ? '(' + item.value + ')' : '') + '</option>\n                            ';else return '\n                                <option ' + (_this2.props.value === item ? 'selected' : '') + ' value="' + item + '">' + item + '</option>\n                            ';
-                    }) + '\n                    </select>\n                    <input\n                         \n                        d-ref="selectHidden"  \n                        type="hidden"\n                        d-bind="value"\n                    >\n                ';
+                    input = h(_templateObject, this.props.id, this.props.name, this.props.classField, this.props.required ? 'required' : '', this.props.disabled ? 'disabled' : '', this.props.forceupdate ? 'forceupdate' : '', this.each(normalizeOptions(this.props.options), function (item) {
+                        if ((typeof item === 'undefined' ? 'undefined' : _typeof(item)) === 'object') return h(_templateObject2, _this2.props.value == item.value ? 'selected' : '', item.value, item.key, _this2.props.showValue ? '(' + item.value + ')' : '');else return h(_templateObject3, _this2.props.value === item ? 'selected' : '', item, item);
+                    }));
                     break;
 
                 case 'textarea':
-                    input = '\n                    <textarea                    \n                        id="' + this.props.id + '" \n                        d-ref="field" \n                        name="' + this.props.name + '" \n                        class="' + this.props.classField + '"\n                        ' + (this.props.required ? 'required' : '') + '\n                        ' + (this.props.disabled ? 'disabled' : '') + '\n                    >' + this.props.value + '</textarea>\n                ';
+                    input = h(_templateObject4, this.props.id, this.props.name, this.props.classField, this.props.required ? 'required' : '', this.props.disabled ? 'disabled' : '', this.props.value);
                     break;
 
                 case 'checkbox':
-                    input = '\n                    <input\n                         \n                        id="' + this.props.id + '" \n                        type="checkbox" \n                        d-bind="done"  \n                        d-ref="field" \n                        name="' + this.props.name + '" \n                        class="' + this.props.classField + '"\n                        ' + (this.props.required ? 'required' : '') + '\n                        ' + (this.props.disabled ? 'disabled' : '') + '\n                    >\n                ';
+                    input = h(_templateObject5, this.props.id, this.props.name, this.props.classField, this.props.required ? 'required' : '', this.props.disabled ? 'disabled' : '');
                     break;
 
                 case 'color':
-                    input = '\n                    <input\n                         \n                        d-ref="colorInput" \n                        type="color" \n                        d-bind="value" \n                        style="vertical-align: bottom"\n                    >\n                    <input\n                         \n                        d-ref="field" \n                        id="' + this.props.id + '" \n                        type="text" \n                        name="' + this.props.name + '" \n                        value="' + this.props.value + '" \n                        class="' + this.props.classField + '"\n                        ' + (this.props.required ? 'required' : '') + '\n                        ' + (this.props.disabled ? 'disabled' : '') + '\n                        style="display: inline; width: inherit;"\n                        size="7"\n                        maxlength="7"\n                        pattern="^#(?:[0-9a-fA-F]{3}){1,2}$"\n                    >\n                ';
+                    input = h(_templateObject6, this.props.id, this.props.name, this.props.value, this.props.classField, this.props.required ? 'required' : '', this.props.disabled ? 'disabled' : '');
                     break;
 
                 default:
-                    input = '\n                    <input\n                         \n                        d-ref="field" \n                        id="' + this.props.id + '" \n                        type="' + this.props.type + '" \n                        name="' + this.props.name + '" \n                        d-bind="value"\n                        ' + (this.props.required ? 'required' : '') + '\n                        ' + (this.props.disabled ? 'disabled' : '') + '\n                        class="' + this.props.classField + '"\n                    >\n                ';
-                    if (this.props.type === 'url' && this.props.showOpenUrl) {
-                        input += '<small style="text-decoration: underline; cursor: pointer" onclick="this.$openUrl()">Open url</small>';
-                    }
+                    input = h(_templateObject7, this.props.id, this.props.type, this.props.name, this.props.required ? 'required' : '', this.props.disabled ? 'disabled' : '', this.props.classField);
+                /*
+                if (this.props.type === 'url' && this.props.showOpenUrl) {
+                    input +=  h`<small style="text-decoration: underline; cursor: pointer" onclick="this.$openUrl()">Open url</small>`;
+                }*/
             }
 
-            return '\n            <div class="' + this.props.classInner + '">\n                <label for="' + this.props.id + '">\n                    ' + this.props.label + ' ' + (this.props.required ? '<span class="required">*</span>' : '') + ' \n                </label>\n                ' + (this.props.description ? '<div>' + this.props.description + '</div>' : '') + '\n                <div>\n                    ' + input + '\n                </div>\n            </div>\n        ';
+            return h(_templateObject8, this.props.classInner, this.props.id, this.props.label, this.props.required ? '<span class="required">*</span>' : '', this.props.description ? h(_templateObject9, this.props.description) : '', input, this.props.type === 'url' && this.props.showOpenUrl ? h(_templateObject10) : '');
         }
     }, {
         key: '$openUrl',
         value: function $openUrl() {
-            if (this.ref.field.value) {
-                window.open(this.ref.field.value);
+            if (this.props.value) {
+                window.open(this.props.value);
             }
         }
     }, {
