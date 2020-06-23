@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>DOZ - COMPONENT</title>
     <script src="https://unpkg.com/doz/dist/doz.js"></script>
-    <script src="bundle.js"></script>
+    <script src="bundle.js?_2"></script>
     <style>
         body {
             font-family: sans-serif;
@@ -35,10 +35,10 @@
                     <doz-formfield type="text" label="Insert your surname" name="surname" required="true"/>
                 </div>
                 <div>
-                    <doz-formfield type="select" label="Male or female" name="select" options='["male","female"]' required="true"/>
+                    <doz-formfield type="select" label="Male or female" name="select" options='${["male","female"]}' required="true"/>
                 </div>
                 <div>
-                    <doz-formfield type="select" label="True or False" name="select" value="1" options='{"false":0,"true":1}' required="true"/>
+                    <doz-formfield type="select" label="True or False" name="select" value="1" options='${{"false":0,"true":1}}' required="true"/>
                 </div>
                 <div>
                     <doz-formfield type="textarea" label="Insert a message" name="textarea" required="true"/>
@@ -46,7 +46,7 @@
                 <div>
                     <doz-formfield type="url" label="Url Type" name="url" value="http://www.google.com"/>
                 </div>
-                
+
             `
         }
     });

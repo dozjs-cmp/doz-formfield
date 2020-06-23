@@ -15,7 +15,7 @@ export default class extends Component{
     constructor(o) {
         super(o);
 
-        this. props = {
+        this.props = {
             id: '',
             type: 'text',
             label: '',
@@ -41,11 +41,11 @@ export default class extends Component{
 
     template(h) {
         let input = '';
-
         switch (this.props.type) {
             case 'select':
 
-                input = `
+                input = h`
+                    
                     <select
                          
                         id="${this.props.id}"
@@ -58,11 +58,11 @@ export default class extends Component{
                     >
                     ${this.each(normalizeOptions(this.props.options), item => {
                     if (typeof item === 'object')
-                        return `
+                        return h`
                                 <option ${this.props.value == item.value ? 'selected' : ''} value="${item.value}">${item.key} ${this.props.showValue ? `(${item.value})` : ''}</option>
                             `;
                     else
-                        return `
+                        return h`
                                 <option ${this.props.value === item ? 'selected' : ''} value="${item}">${item}</option>
                             `;
                     })}
@@ -77,7 +77,7 @@ export default class extends Component{
                 break;
 
             case 'textarea':
-                input = `
+                input = h`
                     <textarea                    
                         id="${this.props.id}" 
                         d-ref="field" 
@@ -90,7 +90,7 @@ export default class extends Component{
                 break;
 
             case 'checkbox':
-                input = `
+                input = h`
                     <input
                          
                         id="${this.props.id}" 
@@ -106,7 +106,7 @@ export default class extends Component{
                 break;
 
             case 'color':
-                input = `
+                input = h`
                     <input
                          
                         d-ref="colorInput" 
@@ -133,7 +133,7 @@ export default class extends Component{
                 break;
 
             default:
-                input = `
+                input = h`
                     <input
                          
                         d-ref="field" 
@@ -146,27 +146,31 @@ export default class extends Component{
                         class="${this.props.classField}"
                     >
                 `;
+                /*
                 if (this.props.type === 'url' && this.props.showOpenUrl) {
-                    input += `<small style="text-decoration: underline; cursor: pointer" onclick="this.$openUrl()">Open url</small>`;
-                }
+                    input +=  h`<small style="text-decoration: underline; cursor: pointer" onclick="this.$openUrl()">Open url</small>`;
+                }*/
         }
 
-        return `
+        return h`
             <div class="${this.props.classInner}">
                 <label for="${this.props.id}">
                     ${this.props.label} ${this.props.required ? '<span class="required">*</span>' : ''} 
                 </label>
-                ${this.props.description ? `<div>${this.props.description}</div>` : ''}
+                ${this.props.description ? h`<div>${this.props.description}</div>` : ''}
                 <div>
-                    ${input}
+                    ${input} 
+                    ${this.props.type === 'url' && this.props.showOpenUrl 
+                        ? h`<small style="text-decoration: underline; cursor: pointer" onclick="this.$openUrl()">Open url</small>`
+                        :``} 
                 </div>
             </div>
         `
     }
 
     $openUrl() {
-        if(this.ref.field.value) {
-            window.open(this.ref.field.value);
+        if(this.props.value) {
+            window.open(this.props.value);
         }
     }
 
